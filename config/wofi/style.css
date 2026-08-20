@@ -1,0 +1,88 @@
+/* Paleta Gruvbox Dark */
+@define-color bg0       #282828;
+@define-color bg1       #3c3836;
+@define-color bg2       #504945;
+@define-color fg0       #fbf1c7;
+@define-color fg1       #ebdbb2;
+@define-color red       #cc241d;
+@define-color green     #98971a;
+@define-color yellow    #d79921;
+@define-color blue      #458588;
+@define-color purple    #b16286;
+@define-color aqua      #689d6a;
+@define-color gray      #a89984;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px;
+}
+
+/* Ventana principal */
+window {
+    background-color: rgba(40, 40, 40, 0.90);
+    border: 2px solid @blue;
+    border-radius: 12px;
+}
+
+/* Caja de entrada (Buscador) */
+#input {
+    background-color: @bg1;
+    color: @fg0;
+    margin: 15px;
+    padding: 10px 15px;
+    border: 2px solid @gray;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+#input:focus {
+    border-color: @yellow;
+}
+
+/* Contenedor de la lista de aplicaciones */
+#inner-box {
+    margin: 0px 15px 15px 15px;
+    background-color: transparent;
+}
+
+#outer-box {
+    background-color: transparent;
+}
+
+/* Fila de cada aplicación: Definimos altura exacta para que no se corten */
+#entry {
+    background-color: transparent;
+    border-radius: 6px;
+    margin: 3px 0px;
+    padding: 6px 12px;
+    min-height: 36px; /* Asegura espacio vertical suficiente */
+}
+
+/* Tamaño fijo y centrado del icono */
+#img {
+    min-width: 22px;
+    min-height: 22px;
+    max-width: 22px;
+    max-height: 22px;
+    margin-right: 14px;
+    background-color: transparent;
+}
+
+/* Texto de las aplicaciones */
+#text {
+    color: @fg1;
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Elemento seleccionado */
+#entry:selected {
+    background-color: @bg2;
+    border: none;
+}
+
+#entry:selected #text {
+    color: @yellow;
+    font-weight: bold;
+}

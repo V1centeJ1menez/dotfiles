@@ -1,0 +1,11 @@
+set constantshow
+set linenumbers
+set tabsize 4
+set tabstospaces
+
+
+# Desactivar parpadeos molestos
+set nowrap
+
+# Incluir sintaxis estándar pero usando los tonos sutiles de la terminal
+include "/usr/share/nano/*.nanorc"

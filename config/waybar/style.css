@@ -1,0 +1,115 @@
+/* Paleta de Colores Gruvbox Dark */
+@define-color bg0 #282828;
+@define-color bg1 #3c3836;
+@define-color fg0 #fbf1c7;
+@define-color red #cc241d;
+@define-color green #98971a;
+@define-color yellow #d79921;
+@define-color blue #458588;
+@define-color purple #b16286;
+@define-color aqua #689d6a;
+@define-color gray #928374;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+
+/* 1. El contenedor general del grupo (el fondo gris que ya tienen tus workspaces) */
+#workspace-section {
+    background-color: #3c3836; /* Asegúrate de que este sea el tono gris que usas */
+    border-radius: 4px;
+    margin: 3px 2px;
+}
+
+/* Bloque cuadrado de Debian con estilo Gruvbox */
+#custom-debian {
+    background-color: #98971a; /* Verde Gruvbox */
+    color: #282828;            /* Color de texto oscuro para contraste */
+    padding: 0px 8px;
+    margin: 3px 2px 3px 6px;   /* Ajusta los márgenes para que encaje en tu barra de 30px */
+    border-radius: 4px;        /* Cambia a 0px si lo quieres estrictamente cuadrado */
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: @bg0;
+    color: @fg0;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* Estilo general de los módulos */
+#workspaces,
+#window,
+#clock,
+#battery,
+#cpu,
+#memory,
+#temperature,
+#network,
+#pulseaudio,
+#tray {
+    background-color: @bg1;
+    color: @fg0;
+    padding: 0 10px;
+    margin: 4px 2px;
+    border-radius: 6px;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    color: @gray;
+    border-radius: 4px;
+}
+
+#workspaces button.focused {
+    background-color: @blue;
+    color: @bg0;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+    color: @fg0;
+}
+
+#battery.warning {
+    color: @yellow;
+}
+
+#battery.critical {
+    color: @red;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: @red;
+        color: @bg0;
+    }
+}
+
+
+#bluetooth {
+    background-color: #504945; /* Gris oscuro cuando está apagado */
+    color: #928374;
+    padding: 0 8px;
+    margin: 3px 2px;
+    border-radius: 4px;
+}
+
+#bluetooth.on {
+    background-color: #458588; /* Azul Gruvbox cuando está encendido pero sin conectar */
+    color: #ebdbb2;
+}
+
+#bluetooth.connected {
+    background-color: #689d6a; /* Verde azulado Gruvbox cuando hay un dispositivo conectado */
+    color: #282828;
+}

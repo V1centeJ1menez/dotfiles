@@ -1,0 +1,28 @@
+# Perfil 1: Solo la laptop
+profile {
+    output eDP-1 mode 1920x1080@60.020Hz position 0,0
+}
+
+# Perfil 2: Monitor externo a la izquierda, Laptop a la derecha
+profile {
+    output DP-4 mode 1920x1080@60.000Hz position 0,0
+    output eDP-1 mode 1920x1080@60.020Hz position 1920,0
+}
+
+profile {
+    # Identifica el monitor externo por su fabricante y modelo exacto
+    output "Lenovo Group Limited T22i-30 V90BY46Z" mode 1920x1080@60.000Hz position 0,0
+    output "LG Display 0x0521 Unknown" mode 1920x1080@60.020Hz position 1920,0
+}
+
+# Perfil 3: Con proyector (Laptop a la izquierda, Proyector a la derecha)
+profile {
+    output eDP-1 mode 1920x1080@60.020Hz position 0,0
+    output HDMI-A-1 mode 1280x720@60Hz position 1920,0
+}
+
+# Perfil 4: Con proyector (Proyector a la izquierda, Laptop a la derecha)
+profile {
+    output HDMI-A-1 mode 1280x720@60Hz position 0,0
+    output eDP-1 mode 1920x1080@60.020Hz position 1280,0
+}

@@ -1,0 +1,17 @@
+# Configuración general de Wofi para Gruvbox con iconos
+mode=drun
+show=drun
+prompt=Aplicaciones...
+width=600
+height=350
+always_parse_args=true
+show_all=false
+allow_markup=true
+allow_images=true
+no_actions=true
+halign=fill
+orientation=vertical
+content_halign=fill
+insensitive=true
+layer=overlay
+term=alacritty
