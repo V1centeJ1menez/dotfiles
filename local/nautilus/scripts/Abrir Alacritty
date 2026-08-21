@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Script para abrir Alacritty en el directorio actual de Nautilus
+
+# Si el script se ejecuta en una carpeta, usa esa ruta
+if [ -n "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" ]; then
+    base_path=$(echo "$NAUTILUS_SCRIPT_SELECTED_FILE_PATHS" | head -n 1)
+    if [ -d "$base_path" ]; then
+        cd "$base_path"
+    else
+        cd "$(dirname "$base_path")"
+    fi
+else
+    # Si se ejecuta en el fondo de una ventana, usa la URI actual
+    dir="${NAUTILUS_SCRIPT_CURRENT_URI#file://}"
+    # Decodificar caracteres especiales (como espacios %20)
+    dir="$(printf '%b' "${dir//%/\\x}")"
+    cd "$dir"
+fi
+
+# Abrir Alacritty
+alacritty &
+
