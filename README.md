@@ -1,5 +1,5 @@
 # dotfiles
-debian-sway-waybar-rofi-gruvbox proyect
+debian-sway-waybar-wofi-gruvbox proyect
 
 ### Alacritty - Sway
 
